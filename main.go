@@ -47,7 +47,7 @@ func main() {
 	case *skStdin:
 		reader := bufio.NewReader(os.Stdin)
 		input, err := reader.ReadString('\n')
-		if err != nil {
+		if err != nil && err.Error() != "EOF" {
 			log.Fatalf("Failed to read from stdin: %v", err)
 		}
 		secret = strings.TrimSpace(input)
