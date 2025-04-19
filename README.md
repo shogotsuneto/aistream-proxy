@@ -12,6 +12,12 @@ aistream-proxy \
   --sk-file ./secret_key
 ```
 
+## Usage (Docker)
+
+```bash
+cat secret-key | sudo docker run -i -p 18080:8080 aistream-proxy:latest --bind 0.0.0.0 --port 8080 --target https://api.openai.com --sk-stdin
+```
+
 ## License
 
 MIT
